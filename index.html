@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Tulis tugas...">
+    <button onclick="tambahTugas()">Tambah</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function tambahTugas() {
+            let input = document.getElementById("taskInput");
+            let teksTugas = input.value.trim();
+
+            if (teksTugas !== "") {
+                let li = document.createElement("li");
+                li.textContent = teksTugas;
+
+                document.getElementById("taskList").appendChild(li);
+
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
